@@ -1,0 +1,136 @@
+.catalog-menu-container{
+	position: absolute;
+	top: 0;
+	width: 100%;
+	top:172px;
+	background: #fff;
+	z-index: 600;
+	height: auto;
+	border-top: 1px solid #D9DDE8;
+	border-bottom: 1px solid #D9DDE8;
+	display: none;
+}
+.cmc-roots{
+	width: 343px;
+	padding-right: 20px;
+    padding-top: 20px;
+	padding-bottom: 20px;
+	border-right: 1px solid #D9DDE8;
+}
+.cmc-roots__item{
+	padding: 13px 20px;
+	line-height: 1.1;
+	border-radius: 5px;
+	&.active{
+		background: #F4F5F9;
+	}
+	a{
+		color: $paragraf!important;
+		font-family: FM;
+	}
+}
+.cmc-children{
+	width: calc(100% - 343px);
+	overflow: hidden;
+}
+
+.cmc-children__box{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	opacity: 0;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding-left: 35px;
+	position: absolute;
+	&.active{
+		z-index: 600;
+		opacity: 1;
+		position: relative;
+	}
+}
+
+.cmc-children__items{
+	grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    grid-gap: 1.25rem;
+}
+
+.cmc-root-title{
+	font-size: 1.5em;
+	font-family: FGM;
+	margin-bottom: 20px;
+	line-height: 1;
+}
+
+@media (max-width:1150px) {
+	.cmc-children__items{
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@media (max-width:975px) {
+	.catalog-menu-container{
+	top: 136px;
+	}
+}
+@media (max-width:960px) {
+	.catalog-home__img{
+		position: relative;
+		margin-top: auto;
+	}
+	.catalog-home__item{
+		min-height: auto;
+		padding-bottom: 0;
+		display: flex;
+		flex-flow: column;
+	}
+	.catalog-home__item header{
+		margin-bottom: 1rem;
+	}
+	.cmc-children__items{
+		grid-gap:10px;
+	}
+
+}
+
+@media (max-width:767px) {
+	.catalog-home__item header{
+		font-size: 14px;
+	}
+	.cmc-children__box{
+		padding-top: 15px;
+		padding-left: 15px;
+	}
+	.cmc-root-title{
+		font-size: 1rem;
+	}
+	.cmc-roots{
+		width: 300px;
+		padding-right: 15px;
+		padding-top: 15px;
+	}
+	.cmc-roots__item{
+		padding: 13px 13px;
+		font-size: 14px;
+	}
+	.cmc-children {
+		width: calc(100% - 300px);
+	}
+}
+
+@media (max-width:650px) {
+	.cmc-children{
+	display: none;
+	}
+	.cmc-roots{
+		width: 100%;
+		padding-right: 0;
+		border-right:0;
+	}
+	.cmc-roots__item{
+		br{
+		display: none;
+		}
+	}
+}

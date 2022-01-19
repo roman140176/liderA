@@ -1,0 +1,636 @@
+@mixin fontface($name_font, $src) {
+  @font-face {
+      font-family: quote($name_font);
+      font-display:swap;
+      src:url(quote("../fonts/" + $src + ".woff")) format("woff"),
+      url(quote("../fonts/" + $src + ".woff2")) format("woff2");
+      font-style: normal;
+      font-display: swap;
+  }
+}
+
+$accent : #56B29D;
+$text : #828B95;
+$paragraf :#38434E;
+input:focus,textarea:focus{
+  outline: none!important;
+  box-shadow:none!important;
+}
+form{
+  margin-bottom: 0!important;
+}
+.db{
+display: block;}
+.hidden{
+  display: none;
+}
+.form_field{
+  &:focus + .status{
+    display: none;
+  }
+}
+.green{
+  background: #252C5F!important;
+  &.min{
+    background: #A99952!important;
+  }
+}
+.text-success{
+  color: $accent!important;
+}
+
+.btn-spinner{
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #fff!important;
+  // border: 2px solid #fff;
+}
+
+
+.status{
+  font-size: 13px;
+  color: red;
+  opacity: 0.7;
+}
+@include fontface("FR", "Formular");
+@include fontface("FM", "Formular-Medium");
+@include fontface("FGM", "FranklinGothic-Medium");
+
+.small-title{
+  font-size: 30px;
+  margin: 0;
+  color: $paragraf!important;
+  display: block;
+  font-family: FM;
+}
+@mixin btn($width){
+  width: $width;
+  color: #fff!important;
+  font-family: FM;
+  height: 50px;
+  font-size: 18px;
+  text-decoration: none!important;
+  background: linear-gradient(0deg, #209D9E 0%, #35D8DC 100%);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  &::before{
+    content:"";
+    position: absolute;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    background: linear-gradient(90deg, #56B29D 0%, #29B4B7 100%);
+    border-radius: 3px;
+    top: 2px;
+    left: 2px;
+  }
+
+  svg{
+    margin-right: 14px;
+    position: relative;
+    z-index: 2;
+  }
+  span{
+    position: relative;
+    z-index: 2;
+  }
+}
+@mixin gray($width){
+  width: $width;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(0deg, #D9DDE8 0%, #E7E9EE 100%), #EDF0F6;
+  border-radius: 5px;
+  margin-left: auto;
+  position: relative;
+  &::before{
+    content:"";
+    position: absolute;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    top: 2px;
+    left: 2px;
+    background: linear-gradient(180deg, #D9DDE8 0%, #E7E9EE 100%), #EDF0F6;
+    border-radius: 3px;
+    transition:all .4s;
+  }
+  svg{
+    margin-right: 14px;
+    position: relative;
+    z-index: 2;
+  }
+  span{
+    position: relative;
+    z-index: 2;
+    color: $paragraf!important;
+    // transition:all .2s;
+  }
+  @media (min-width: 650px) {
+    &:hover{
+      border: none;
+      &::before{
+        box-shadow: inset 1px -1px 5px rgba(#333,.05);
+      }
+    }
+  }
+}
+@mixin cbtn($width){
+  width: $width;
+  color: #fff!important;
+  font-family: FM;
+  height: 50px;
+  font-size: 1rem;
+  text-decoration: none!important;
+  background: linear-gradient(0deg, #209D9E 0%, #35D8DC 100%);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  &::before{
+    content:"";
+    position: absolute;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    background: linear-gradient(90deg, #56B29D 0%, #29B4B7 100%);
+    border-radius: 3px;
+    top: 2px;
+    left: 2px;
+  }
+  svg{
+    margin-left: 10px;
+    position: relative;
+    z-index: 2;
+  }
+  span{
+    position: relative;
+    z-index: 2;
+  }
+@media (max-width:480px) {
+  height: 45px;
+}
+}
+.grid-box{
+  display: grid;
+}
+form{
+  margin-bottom: 0;
+}
+a{
+   text-decoration: none!important;
+}
+input:focus,button:focus,button:active{
+  outline:none;
+}
+.list-none{
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.wrapper {
+  max-width: 1920px;
+  min-width: 260px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  position: relative;
+  overflow: hidden;
+
+  .content{
+    flex: 1 0 auto;
+    position: relative;
+    // z-index: 3;
+  }
+  .footer {
+    flex: 0 0 auto;
+    }
+}
+  html,body{
+    height: 100%;
+    font-family: FR;
+    font-size: 16px;
+    color:$paragraf;
+    line-height: 1.42857143;
+  }
+  /**/
+.ovh{
+  overflow: hidden;
+}
+
+  /**/
+.container {
+        padding: 0;
+        width: 1440px;
+        max-width: 1440px;
+        @media (max-width:1470px) {
+          width: 100%;
+          padding: 0 15px;
+        }
+    }
+  .d-flex{
+     flex-wrap: wrap!important;
+     }
+.posrel{
+    position: relative;
+    }
+.abs{
+    position: absolute;
+    }
+.w991{
+  @media (max-width:991px) {
+    padding-top: 1.8rem;
+  }
+}
+.page-title{
+    font-size: 40px;
+    font-family: FGM;
+    color: $paragraf;
+    margin-bottom: 0;
+    margin-top: 0;
+    @media (max-width:991px) {
+        font-size: 2rem;
+        line-height: 1;
+      }
+    @media (max-width:480) {
+        font-size: 1.7rem;
+      }
+    }
+.small-text{
+  font-size: .875rem;
+}
+.posfix{
+    position: fixed;
+    }
+a:focus,a:active,button:focus,button:active,button:target{
+  outline: unset!important;
+  // border: none!important;
+  box-shadow:none!important;
+}
+
+ .lable-orange{
+        background: linear-gradient(90deg, #FF9A84 0%, #FFA979 99%);
+    }
+    .lable-blue{
+        background: linear-gradient(90deg, #50B0C5 0%, #7DCADB 99%);
+    }
+    .lable-purple{
+        background: linear-gradient(90deg, #505CC5 0%, #7D86DB 99%);
+    }
+    .lable-green{
+        background: linear-gradient(90deg, #7CD05F 0%, #ACDB7D 99%);
+    }
+
+  .breadcrumb{
+  margin-bottom: 0;
+  background:transparent;
+  padding-left: 0;
+  margin-top: 1.875rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  // margin-top: 30px;
+  @media (max-width: 991px) {
+    display: none;
+  }
+  li{
+     display: flex;
+        align-items: center;
+        font-size: 16px;
+          &::before{
+            padding: 0 5px 0 10px!important;
+            float: left;
+            padding-right: .5rem;
+            color: #6c757d;
+            content: var(--bs-breadcrumb-divider, "/");
+            }
+      &:first-child{
+        &::before{
+          display: none;
+        }
+      }
+      &.active{
+
+        }
+      a{
+          color: #333;
+
+          }
+      }
+  }
+
+
+/*********************************************/
+.form-button{
+  position: relative;
+  z-index: 1000;
+}
+#spinner{
+  top: calc(50% - 1rem);
+  left: calc(50% - 1rem);
+}
+
+#spinnerbox{
+  top: calc(50% - 1rem);
+  left: calc(50% - 1rem);
+  z-index: 500;
+}
+
+/**********************************winbox********************************************/
+.winbox {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: #0050ff;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  transition: width 0.3s, height 0.3s, transform 0.3s;
+  transition-timing-function: cubic-bezier(0.3, 1, 0.3, 1);
+  will-change: transform, width, height;
+  /* contain "strict" does not make overflow contents selectable */
+  contain: layout size;
+  /* explicitly set text align to left fixes an issue with iframes alignment when centered */
+  text-align: left;
+  /* workaround for using passive listeners */
+  touch-action: none;
+}
+.wb-header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 35px;
+  color: #fff;
+  overflow: hidden;
+  background: darken($accent,10%)!important;
+  font-family: FM;
+}
+.wb-body {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 35px;
+  bottom: 0;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+  will-change: contents;
+  background: #fff;
+  /* when no border is set there is some thin line visible */
+  /* always hide top border visually */
+  margin-top: 0 !important;
+  contain: strict;
+}
+.wb-title {
+  // font-family: Arial, sans-serif;
+  font-size: 14px;
+  padding-left: 10px;
+  cursor: move;
+  line-height: 35px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.wb-n {
+  position: absolute;
+  top: -5px;
+  left: 0;
+  right: 0;
+  height: 10px;
+  cursor: n-resize;
+}
+.wb-e {
+  position: absolute;
+  top: 0;
+  right: -5px;
+  bottom: 0;
+  width: 10px;
+  cursor: w-resize;
+}
+.wb-s {
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  height: 10px;
+  cursor: n-resize;
+}
+.wb-w {
+  position: absolute;
+  top: 0;
+  left: -5px;
+  bottom: 0;
+  width: 10px;
+  cursor: w-resize;
+}
+.wb-nw {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 15px;
+  height: 15px;
+  cursor: nw-resize;
+}
+.wb-ne {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 15px;
+  height: 15px;
+  cursor: ne-resize;
+}
+.wb-sw {
+  position: absolute;
+  bottom: -5px;
+  left: -5px;
+  width: 15px;
+  height: 15px;
+  cursor: ne-resize;
+}
+.wb-se {
+  position: absolute;
+  bottom: -5px;
+  right: -5px;
+  width: 15px;
+  height: 15px;
+  cursor: nw-resize;
+}
+.wb-icon {
+  float: right;
+  height: 35px;
+  max-width: 100%;
+  text-align: center;
+}
+.wb-icon * {
+  display: inline-block;
+  width: 30px;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  max-width: 100%;
+}
+.wb-min {
+  background-image: url("../img/min.svg");
+  background-size: 14px auto;
+  background-position: center bottom 11px;
+}
+.wb-max {
+  background-image: url("../img/max.svg");
+  background-size: 17px auto;
+}
+.wb-close {
+  background-image: url("../img/close.svg");
+  background-size: 15px auto;
+}
+.wb-full {
+  background-image: url("../img/full.svg");
+  background-size: 16px auto;
+}
+/*
+.winbox:fullscreen{
+  transition: none !important;
+}
+.winbox:fullscreen .wb-full{
+  background-image: url(@minimize);
+}
+.winbox:fullscreen > div,
+.winbox:fullscreen .wb-title,
+*/
+.winbox.modal .wb-body ~ div,
+.winbox.modal .wb-title,
+.winbox.min .wb-body ~ div,
+.winbox.max .wb-body ~ div {
+  pointer-events: none;
+}
+.winbox.max .wb-title {
+  cursor: default;
+}
+.winbox.min .wb-full,
+.winbox.min .wb-min {
+  display: none;
+}
+.winbox.min .wb-title {
+  cursor: default;
+}
+.winbox.min .wb-body > * {
+  display: none;
+}
+.max {
+  box-shadow: none;
+}
+.max .wb-body {
+  margin: 0 !important;
+}
+.winbox iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.winbox.drag {
+  transition: none;
+}
+.winbox.drag iframe {
+  pointer-events: none;
+}
+.winbox.modal:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  border-radius: inherit;
+}
+.winbox.modal:after {
+  content: '';
+  position: absolute;
+  top: -100vh;
+  left: -100vw;
+  right: -100vw;
+  bottom: -100vh;
+  background: #0d1117;
+  animation: fade-in 0.2s ease-out forwards;
+  z-index: -1;
+}
+.winbox.modal .wb-min,
+.winbox.modal .wb-max,
+.winbox.modal .wb-full {
+  display: none;
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.85;
+  }
+}
+.no-animation {
+  transition: none;
+}
+.no-shadow {
+  box-shadow: none;
+}
+.no-header .wb-header {
+  display: none;
+}
+.no-header .wb-body {
+  top: 0;
+}
+.no-min .wb-min {
+  display: none;
+}
+.no-max .wb-max {
+  display: none;
+}
+.no-full .wb-full {
+  display: none;
+}
+.no-close .wb-close {
+  display: none;
+}
+.no-resize .wb-body ~ div {
+  display: none;
+}
+.no-move:not(.min) .wb-title {
+  pointer-events: none;
+}
+/*
+.winbox .wb-hide {
+  display: none;
+}
+.wb-show {
+  display: none;
+}
+.winbox .wb-show {
+  display: revert;
+}
+*/
+.page-item.active .page-link{
+  border: 1px solid #0d6efd;
+  &:focus{
+    border: 1px solid #0d6efd!important;
+  }
+  &:active{
+    border: 1px solid #dee2e6!important;
+  }
+}
+
+.page-item{
+  &.active{
+    a{
+      pointer-events: none;
+    }
+  }
+}
+/**/
+
+
+

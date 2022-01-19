@@ -1,0 +1,262 @@
+.lk-setting{
+	width: 100%;
+	.lk-setting__img{
+		float: left;
+		width: 200px;
+		padding-top: 27px;
+	}
+	.lk-setting__avatar{
+		width: 100%;
+		background: $accent;
+		&.no-avatar{
+			height: 200px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		img{
+			width: 100%;
+			&.nophoto{
+				display: inline-block;
+				width: 100px;
+				height: 100px;
+			}
+		}
+	}
+	.lk-setting__content{
+		float: right;
+		width: calc(100% - 230px);
+		input[type=submit]{
+			background: #e0771a;
+			color: #fff;
+			}
+	}
+	.lk-setting__bottom{
+		margin: 10px 0px 0px;
+	}
+	&:after{
+		content: '';
+		clear: both;
+		display: block;
+	}
+}
+
+.but-pink{
+	@include btn(250px);
+	border: none;
+	height: 45px;
+}
+.lk-box__content{
+	.upload-box{
+	margin-top: 20px;
+	}
+	.upload-box__btn{
+		@include btn(100%);
+		height: 45px;
+		cursor: pointer;
+		span{
+			pointer-events: none;
+		}
+	}
+	#uploaud_box{
+		input{
+			display: none;
+		}
+	}
+	.col-sm-12{
+		padding-left: 15px;
+		padding-right: 15px;
+		&:last-of-type{
+			.form-group{
+			margin-bottom: 0;
+			}
+		}
+		label{
+			margin-bottom: 5px;
+		}
+		.form-group{
+			margin-bottom: 1rem;
+			input{
+					height: 45px;
+					border: 2px solid #D9DDE8;
+					&:focus{
+						border: 2px solid $accent;
+					}
+					&#User_email{
+						background: #fff!important;
+					}
+				}
+		}
+	}
+
+}
+.form-group-radio{
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px!important;
+	[for="ProfileForm_gender"]{
+		font-family: FM;
+	}
+}
+#adv_inp{
+	position: relative;
+	top: -10px;
+}
+#ProfileForm_gender{
+	display: flex;
+	align-items: center;
+	margin-left: 2rem;
+}
+.radio-inline{
+	input{
+		display: none;
+		&:checked + label::after{
+			display: block;
+		}
+	}
+	&:first-child{
+		margin-right: 1rem;
+	}
+	label{
+		padding-left: 25px;
+		position: relative;
+		cursor: pointer;
+		&::before{
+			content:"";
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			background: #fff;
+			border: 1px solid $accent;
+			transform:translateY(-50%);
+		}
+		&::after{
+			content:"";
+			position: absolute;
+			top: 3px;
+			left: 2px;
+			width: 16px;
+			height: 16px;
+			border-radius: 50%;
+			background: $accent;
+			display: none;
+		}
+	}
+}
+
+@media (max-width: 1300px){
+	.lk-setting{
+		width: 100%;
+		.lk-setting__img{
+			width: 180px;
+		}
+		.lk-setting__avatar{
+			height: 180px;
+			line-height: 180px;
+			img{
+				&.nophoto{
+					width: 90px;
+					height: 76px;
+				}
+			}
+		}
+		.lk-setting__content{
+			width: calc(100% - 210px);
+		}
+		.lk-setting__bottom{
+			margin: 10px 0px 0px;
+		}
+	}
+}
+
+@media (max-width: 1100px){
+	.lk-setting{
+		width: 100%;
+		.lk-setting__img{
+			width: 170px;
+		}
+		.lk-setting__avatar{
+			height: 170px;
+			line-height: 170px;
+			img{
+				&.nophoto{
+					width: 80px;
+					height: 66px;
+				}
+			}
+		}
+		.lk-setting__content{
+			width: calc(100% - 190px);
+			.row{
+				.col-sm-6{
+				    padding-left: 0;
+    				padding-right: 0;
+				}
+			}
+		}
+		.lk-setting__bottom{
+			margin: 10px 0px 0px;
+		}
+	}
+}
+
+@media (max-width:991px) {
+	.lk-box__content .upload-box__btn{
+	font-size: 14px;
+		height: 45px;
+	}
+	.lk-setting .lk-setting__img{
+	padding-top: 0;
+	}
+	.lk-setting .lk-setting__content{
+	width: 100%;
+	margin-top: 1rem;
+	}
+}
+@media (max-width:650px) {
+	.lk-setting__content .col-sm-6{
+		width: 100%!important;
+	}
+	#adv_inp{
+	top: 0;
+	margin-top: 20px;
+	}
+}
+@media (max-width: 480px){
+.lk-setting .lk-setting__avatar{
+height: auto;
+}
+	.lk-setting{
+		width: 100%;
+		.lk-setting__img{
+			width: 200px;
+			width: 100%;
+		}
+		.lk-setting__avatar{
+			// height: 200px;
+			// line-height: 200px;
+			img{
+				&.nophoto{
+					width: 80px;
+					height: 66px;
+				}
+			}
+		}
+		.lk-setting__content{
+			width: 100%;
+			padding: 30px 0px 0px;
+			.row{
+				.col-sm-6{
+				    padding-left: 0;
+    				padding-right: 0;
+				}
+			}
+		}
+		.lk-setting__bottom{
+			margin: 10px 0px 0px;
+		}
+	}
+}

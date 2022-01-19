@@ -1,0 +1,136 @@
+.contact-container{
+    justify-content: space-between;
+}
+.file-desc{
+    margin-top: 28px;
+    p{
+        margin-bottom: 11px;
+    }
+}
+.contact__item{
+    display: flex;
+    flex-flow:column;
+}
+.address{
+    font-family: FM;
+    line-height: 1.2;
+    margin-bottom: 65px;
+    margin-top: 5px;
+}
+.write-us{
+    @include btn(150px);
+    font-size: 1rem;
+}
+.all-contacts{
+    @include gray(150px);
+    font-size: 1rem;
+    font-family: FM;
+}
+.contacts__socials{
+    margin-top: auto;
+    align-items: center;
+}
+.contacts__socials--box{
+    margin-right: 20px;
+    a:first-child{
+        margin-right: 10px;
+    }
+}
+.contacts__mode{
+    color: $text;
+}
+.contacts__email{
+    font-size: 18px;
+    color: $paragraf!important;
+    font-family: FM;
+    margin-top: 18px;
+    span{
+        border-bottom: 1px solid $paragraf;
+    }
+}
+.pdf-link{
+    align-items: center;
+    display: flex;
+    color: $accent!important;
+    border-bottom: 1px solid $accent;
+    align-self: center;
+    margin-left: 13px;
+}
+.about-company-link{
+    color: $accent!important;
+    span{
+      border-bottom: 1px solid $accent;
+    }
+}
+.contact-form{
+    margin-top: 60px;
+    padding-top: 50px;
+    border-top: 1px solid #D9DDE8;
+    padding-bottom: 75px;
+    h2{
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width:1150px) {
+    .w1150{
+        display: none;
+    }
+}
+@media (max-width:850px) {
+    .contact-form{
+        .small-title{
+            font-size: 1.2rem;
+        }
+    }
+    .address{
+    font-size: 14px;
+    font-family: FR;
+    }
+    .all-contacts{
+    display: none;
+    }
+    .catalog-file-icon{
+        svg{
+            width: 20px;
+            height: 30px;
+        }
+    }
+    .file-desc {
+    margin-top: 1rem;
+    font-size: 14px;
+    }
+    .about-company-link {
+    margin-top: auto;
+    }
+    .contact-form {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    }
+}
+
+@media (max-width:700px) {
+    .contact__item{
+    &:first-child{
+        margin-bottom: 2rem;
+    }
+    width: 100%;
+    }
+    .address{
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width:620px) {
+    .contact__item:last-of-type{
+        padding-bottom: 4.5rem;
+    }
+}
+@media (max-width:480px) {
+    .file-desc{
+        br{
+        display: none;
+        }
+    }
+}

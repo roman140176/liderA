@@ -1,0 +1,25 @@
+{
+    "name": "krupni/yii-eauth",
+    "description": "EAuth extension allows to authenticate users by the OpenID, OAuth 1.0 and OAuth 2.0 providers.",
+    "prefer-stable": true,
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Maxim Zemskov",
+            "email": "nodge@yandex.ru"
+        }
+    ],
+    "homepage": "https://github.com/Nodge/yii-eauth",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": ">=5.3.0",
+        "krupni/yii-eoauth":"1.0.0",
+        "krupni/lightopenid":"1.0.0"
+    },
+    "autoload": {
+        "classmap": [
+            "."
+        ]
+    }
+}

@@ -1,0 +1,141 @@
+#CallbackFormEmail{
+	.modal-content{
+		width: 1003px;
+		flex-flow: row;
+		left: 50%;
+    	transform: translateX(-50%);
+	}
+	.modal__left{
+		width: 292px;
+	}
+	.modal__right{
+		width: calc(100% - 292px);
+	}
+	.modal-header{
+	padding-left: 3.125rem;
+	padding-right: 20px;
+	align-items: flex-start;
+	}
+	.modal-body{
+		padding-left: 3.125rem;
+		padding-right: 3.75rem;
+	}
+	.btn-close{
+		opacity: 1;
+		margin: 0;
+		padding: 0;
+	}
+	.form-group{
+		label{
+			display: none;
+		}
+	}
+	.modal-title{
+	font-size: 1.875rem;
+	font-family: FGM;
+	}
+	.redButton{
+		@include btn(250px);
+		border: none;
+		margin-right: 20px;
+	}
+	.form-button{
+		margin-top: 20px;
+		align-items: center;
+	}
+}
+.client-warn{
+	font-size: 14px;
+	margin-bottom: 1rem;
+}
+.condition-accept{
+font-size: 14px;
+line-height: 1.2;
+}
+.modal-flex-inputs{
+	justify-content: space-between;
+	.form-group{
+		width: calc(50% - 5px);
+	}
+	input{
+		height: 50px;
+		border: 2px solid #D9DDE8;
+		border-radius: 5px;
+		&:focus{
+			border: 2px solid $accent;
+		}
+	}
+}
+.areabox{
+margin-top: 10px;
+margin-bottom: 15px;
+textarea{
+	border: 2px solid #D9DDE8;
+	border-radius: 5px;
+	height: 107px;
+	&:focus{
+		border: 2px solid $accent;
+	}
+	}
+}
+.mod-desription{
+	line-height: 1.2;
+}
+
+	#messmodal{
+	.modal-dialog{
+		transform:translate(0,0)!important;
+		}
+	}
+	.success-title {
+    font-size: 1.375rem;
+    line-height: 1.3;
+    font-family: 'FM';
+	}
+	.modal-content{
+		border: 1px solid $accent;
+		}
+
+@media (max-width:1020px) {
+	#CallbackFormEmail .modal__left{
+		display: none;
+	}
+	#CallbackFormEmail .modal__right{
+		width: 100%;
+	}
+	#CallbackFormEmail .modal-content{
+		width: 100%;
+	}
+	#CallbackFormEmail .modal-header,#CallbackFormEmail .modal-body{
+	padding-left: 15px;
+	padding-right: 15px;
+	}
+	#CallbackFormEmail .g-recaptcha{
+	transform:scale(.8,.8);
+	transform-origin: left;
+	}
+	.modal-flex-inputs .form-group{
+		width: 100%;
+		&:first-child{
+			margin-bottom: 10px;
+		}
+	}
+	.mod-desription{
+		display: none;
+	}
+	.condition-accept{
+		margin-top: 10px;
+	}
+	#CallbackFormEmail .form-button{
+	margin-top: 5px;
+	}
+}
+
+@media (max-width:480px) {
+	.modal-flex-inputs input{
+		height: 40px;
+	}
+	#CallbackFormEmail .modal-title{
+	font-size: 1.5rem;
+	}
+}
